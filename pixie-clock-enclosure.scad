@@ -33,7 +33,7 @@ lidInsetHeight = 0;
 hingeThickness = 0;
 
 // hinge length multiplier (as a function of case height - longer hinges may be needed for less flexible plastics)
-hingeLengthScale = 1;
+hingeLengthScale = 8;
 
 
 /*[Details]*/
@@ -45,7 +45,7 @@ rimInset = 0.0;
 tabSize = 0; 
 
 // Fillet radius used for hinge and tab
-hingeFillet = 0;
+hingeFillet = 3;
 
 
 /*[Printer Tolerances]*/
@@ -93,7 +93,8 @@ module case()
 				for (y = [-l/2+r, l/2-r]) {
 					for (x = [-w/2+r, w/2-r]) {
 						translate([x,y,0]) {
-							cylinder(h=h, r=r, center=true);
+							cylinder(h=h, r=r, center=false
+                        );
 						}
 					}
 				}
