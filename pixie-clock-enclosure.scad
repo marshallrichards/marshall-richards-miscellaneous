@@ -33,7 +33,7 @@ lidInsetHeight = 0;
 hingeThickness = 0;
 
 // hinge length multiplier (as a function of case height - longer hinges may be needed for less flexible plastics)
-hingeLengthScale = 8;
+hingeLengthScale = 1;
 
 
 /*[Details]*/
@@ -45,7 +45,7 @@ rimInset = 0.0;
 tabSize = 0; 
 
 // Fillet radius used for hinge and tab
-hingeFillet = 3;
+hingeFillet = 0;
 
 
 /*[Printer Tolerances]*/
