@@ -1,17 +1,54 @@
+<!DOCTYPE html>
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="BIcams.css">
-<META HTTP-EQUIV="refresh" CONTENT="15">
+<script src="jquery-1.12.4.js"></script>
+<script>
+	$( "#content" ).load( "http://www.wsdot.com/ferries/vesselwatch/TerminalDetail.aspx?terminalid=3 div#realtimecontent" ); 
+</script>
+<META HTTP-EQUIV="refresh" CONTENT="120">
 </head>
+<style>
+div#container
+{
+    width:582px;
+    height:317px;
+    overflow:hidden;     /* if you don't want a scrollbar, set to hidden */
+    overflow-x:hidden;   /* hides horizontal scrollbar on newer browsers */
+
+    /* resize and min-height are optional, allows user to resize viewable area */
+    -webkit-resize:vertical; 
+    -moz-resize:vertical;
+    resize:vertical;
+    min-height:317px;
+}
+
+iframe#embed
+{
+    width:1000px;       /* set this to approximate width of entire page you're embedding */
+    height:2000px;      /* determines where the bottom of the page cuts off */
+    margin-left:-201px; /* clipping left side of page */
+    margin-top:-356px;  /* clipping top of page */
+    overflow:hidden;
+
+    /* resize seems to inherit in at least Firefox */
+    -webkit-resize:none;
+    -moz-resize:none;
+    resize:none;
+}
+</style>
 <body>
 <div id="NW">
-	<a href="BainbridgeCams.html" title="WSF Bainbridge Ferry Holding" > <img style="border: 1px solid #787878; height: 100%; width: 100%; " alt="WSF Bainbridge Ferry Holding" src="http://images.wsdot.wa.gov/wsf/Bainbridge/Bainbridge.jpg?1462243644347"></a>
+	 <img style="border: 1px solid #787878; height: 100%; width: 100%; " alt="WSF Bainbridge Ferry Holding" src="http://images.wsdot.wa.gov/wsf/Bainbridge/Bainbridge.jpg?1462243644347">
 </div>
 <div id="NE">
 	<img style="border: 1px solid #787878; height: 100%; width: 100%; " src="http://images.wsdot.wa.gov/orflow/305vc00022_s.jpg?1462250746581">
 </div>
 <div id="E">
-	<div id="realtimecontent" style="font-size: 1.0em;"><table style="width: 100%;"><tbody><tr><td style="width: 10%; font-weight: bold; background-color: #eeeeee;">Depart</td><td style="width: 40%; font-weight: bold; background-color: #eeeeee;">Destination</td><td style="width: 10%; font-weight: bold; background-color: #eeeeee; text-align: center;">Drive-up</td><td class="termcondvessels" style="width: 15%; font-weight: bold; background-color: #eeeeee;">Vessel</td></tr><tr onmouseover="style.backgroundColor='#E8F9E6'" onmouseout="style.backgroundColor=''"><td style="white-space: nowrap;">11:35 PM</td><td> <a href="TerminalDetail.aspx?terminalid=7" title="Check Terminal Conditions!" target="_self">Seattle</a></td><td style="background-color: #00FF00; text-align: center;"><span style="white-space: nowrap;">199 Spaces</span></td><td class="termcondvessels"><a href="vesseldetail.aspx?vessel_id=32">Tacoma</a></td></tr><tr onmouseover="style.backgroundColor='#E8F9E6'" onmouseout="style.backgroundColor=''"><td style="white-space: nowrap;">12:55 AM</td><td> <a href="TerminalDetail.aspx?terminalid=7" title="Check Terminal Conditions!" target="_self">Seattle</a></td><td style="background-color: #00FF00; text-align: center;"><span style="white-space: nowrap;">203 Spaces</span></td><td class="termcondvessels"><a href="vesseldetail.aspx?vessel_id=32">Tacoma</a></td></tr></tbody></table></div>
+	</style>
+<div id="container">
+    <iframe id="embed" src="http://www.wsdot.com/ferries/vesselwatch/TerminalDetail.aspx?terminalid=3"></iframe>
+</div>
 </div>
 <div id="SW">
 	<img style="border: 1px solid #787878; height: 100%; width: 100%; " src="http://images.wsdot.wa.gov/orflow/305vc00029_s.jpg?1462252582351">
