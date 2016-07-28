@@ -1,0 +1,27 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<title>testing cross domain</title>
+	<script type="text/javascript" src="jquery-1.12.4.js"></script>
+	<script type="text/javascript" src="testcrossdomain.js"></script>
+	
+</head>
+<body>
+<div id="container">
+	<form>
+		<p><label>Type a url :</label><input type="text" name="sitename" id="sitename"/></p>
+		<p><input type="submit" name="submit" id="submit" value="Make Cross-Domain AJAX Request"</p>
+	</form>
+</div>
+<script>
+$('form').submit(function() {
+	var path = $('#sitename').val();
+
+requestCrossDomain(path, function(results) {
+   $('#container').html(results);
+});
+	return false;
+	});
+	</script>
+</body>
+</html>

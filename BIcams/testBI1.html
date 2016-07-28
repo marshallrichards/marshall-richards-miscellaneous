@@ -1,0 +1,33 @@
+<html>
+<head>
+<script src="jquery-1.12.4.js"></script>
+<script>
+$(document).ready(function(){
+	$("button").click(function(){
+		$("#div1").load("http://www.wsdot.com/ferries/vesselwatch/TerminalDetail.aspx?terminalid=3 div#realtimecontent", function(responseTxt, statusTxt, xhr){
+			if(statusTxt == "success")
+				alert("External content loaded successfully!");
+			if(statusTxt == "error")
+				alert("Error: " + xhr.status + ": " + xhr.statusText);
+		});
+	});
+});
+</script>
+</head>
+<body>
+<div id="response"></div>
+<script type="text/javascript">
+	
+$(function(){
+    var contentURI= 'http://www.wsdot.com/ferries/vesselwatch/TerminalDetail.aspx?terminalid=3 div#realtimecontent';    // URL TO GRAB + # of any desired element // if needed :)
+    $('#response').load('grabber.php?url='+ contentURI);
+});
+
+</script>
+
+<div id="div1"><h2>Let jQuery AJAX Change This Text</h2></div>
+
+<button>Get External Content</button>
+
+</body>
+</html>
